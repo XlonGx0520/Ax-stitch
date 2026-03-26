@@ -12,9 +12,9 @@
 
 ```mermaid
 stateDiagram-v2
-  [*] --> {{STATE_A}}
-  {{STATE_A}} --> {{STATE_B}}: {{TRANSITION_EVENT}}
-  {{STATE_B}} --> [*]
+  [*] --> STATE_A
+  STATE_A --> STATE_B: TRANSITION_EVENT
+  STATE_B --> [*]
 ```
 
 ## 3. 状态说明

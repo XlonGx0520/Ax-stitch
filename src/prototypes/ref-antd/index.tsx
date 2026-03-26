@@ -65,9 +65,9 @@ const SalesTrendChart = () => {
 
   useEffect(() => {
     if (!chartRef.current) return;
-    
+
     chartInstance.current = echarts.init(chartRef.current);
-    
+
     const option = {
       tooltip: {
         trigger: 'axis',
@@ -130,7 +130,7 @@ const SalesTrendChart = () => {
     const resizeObserver = new ResizeObserver(() => {
       chartInstance.current?.resize();
     });
-    
+
     resizeObserver.observe(chartRef.current);
 
     return () => {
@@ -148,9 +148,9 @@ const CategoryPieChart = () => {
 
   useEffect(() => {
     if (!chartRef.current) return;
-    
+
     chartInstance.current = echarts.init(chartRef.current);
-    
+
     const option = {
       tooltip: {
         trigger: 'item'
@@ -202,7 +202,7 @@ const CategoryPieChart = () => {
     const resizeObserver = new ResizeObserver(() => {
       chartInstance.current?.resize();
     });
-    
+
     resizeObserver.observe(chartRef.current);
 
     return () => {
@@ -263,7 +263,7 @@ const Component = forwardRef<AxureHandle, AxureProps>(function EcommerceDashboar
   const onEventHandler = typeof innerProps.onEvent === 'function' ? innerProps.onEvent : () => undefined;
 
   const title = typeof configSource.title === 'string' && configSource.title ? configSource.title : '电商后台';
-  
+
   const { token } = theme.useToken();
 
   const defaultOrders = [
@@ -359,7 +359,7 @@ const Component = forwardRef<AxureHandle, AxureProps>(function EcommerceDashboar
       <SideMenu title="电商后台" />
       <Layout style={{ background: '#f5f7fa' }}>
         <Layout.Content className="ecommerce-dashboard">
-          
+
           {/* Header Section */}
           <div className="dashboard-header">
             <div>
@@ -451,8 +451,8 @@ const Component = forwardRef<AxureHandle, AxureProps>(function EcommerceDashboar
           {/* Charts Section */}
           <Row gutter={[20, 20]} style={{ marginTop: 20 }}>
             <Col xs={24} lg={16}>
-              <Card 
-                title={<span style={{ fontWeight: 600 }}>销售趋势</span>} 
+              <Card
+                title={<span style={{ fontWeight: 600 }}>销售趋势</span>}
                 bordered={false}
                 extra={
                   <Space>
@@ -476,8 +476,8 @@ const Component = forwardRef<AxureHandle, AxureProps>(function EcommerceDashboar
           {/* Table Section */}
           <Row gutter={[20, 20]} style={{ marginTop: 20 }}>
             <Col xs={24} lg={16} style={{ display: 'flex' }}>
-              <Card 
-                title={<span style={{ fontWeight: 600 }}>最近订单</span>} 
+              <Card
+                title={<span style={{ fontWeight: 600 }}>最近订单</span>}
                 bordered={false}
                 extra={<Button type="link">查看全部</Button>}
                 style={{ width: '100%', display: 'flex', flexDirection: 'column' }} // Flex column layout
@@ -494,8 +494,8 @@ const Component = forwardRef<AxureHandle, AxureProps>(function EcommerceDashboar
               </Card>
             </Col>
             <Col xs={24} lg={8} style={{ display: 'flex' }}>
-              <Card 
-                title={<span style={{ fontWeight: 600 }}>热销商品 Top 7</span>} 
+              <Card
+                title={<span style={{ fontWeight: 600 }}>热销商品 Top 7</span>}
                 bordered={false}
                 style={{ width: '100%', display: 'flex', flexDirection: 'column' }}
                 bodyStyle={{ flex: 1, padding: '12px 24px' }}
@@ -508,10 +508,10 @@ const Component = forwardRef<AxureHandle, AxureProps>(function EcommerceDashboar
                     <List.Item style={{ padding: '10px 0' }}>
                       <List.Item.Meta
                         avatar={
-                          <div style={{ 
-                            width: 24, 
-                            height: 24, 
-                            borderRadius: '50%', 
+                          <div style={{
+                            width: 24,
+                            height: 24,
+                            borderRadius: '50%',
                             background: index < 3 ? '#3b82f6' : '#f1f5f9',
                             color: index < 3 ? '#fff' : '#64748b',
                             display: 'flex',
